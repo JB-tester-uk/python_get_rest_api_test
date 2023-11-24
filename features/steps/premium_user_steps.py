@@ -10,7 +10,7 @@ def given_a_base_url_has_been_provide(context, common_url_string):
 def given_a_url_user_option_has_been_provide(context, url_option_string):
     context.url = context.url + str(url_option_string).strip()
     assert (context.url.startswith(r"http://") or
-            context.url.startswith(r"https://")) == True, f"Error: {url_option_string} does not begin with 'http://' or 'https://'"
+            context.url.startswith(r"https://")), f"Error: {context.url} does not begin with 'http://' or 'https://'"
 
 
 @when('the user GET request is sent')
